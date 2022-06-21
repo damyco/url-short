@@ -1,5 +1,9 @@
-import styles from "../styles/Header.module.css";
 import Link from "next/link";
+
+import Button from "./Button";
+
+import styles from "../styles/Header.module.css";
+import btnStyles from "../styles/Button.module.css";
 
 const links = [
   { id: 1, url: "/", text: "Features" },
@@ -14,7 +18,7 @@ export default function Header() {
         <nav className={styles.nav}>
           <Link href="/">
             <a>
-              <img src="/logo.svg" alt="logo" />
+              <img className={styles.logo} src="/logo.svg" alt="logo" />
             </a>
           </Link>
 
@@ -31,8 +35,8 @@ export default function Header() {
           </ul>
         </nav>
         <div>
-          <button>Login</button>
-          <button>Sign up</button>
+          <Button style={btnStyles.secondary}>Login</Button>
+          <Button style={btnStyles.primary}>Sign up</Button>
         </div>
       </div>
     </header>

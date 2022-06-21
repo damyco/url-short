@@ -1,0 +1,32 @@
+.btn {
+  border: 0;
+  padding: 0.6rem 1.5rem;
+  color: var(--grayish-violet);
+  border-radius: 10rem;
+  font-weight: bold;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.primary {
+  background-color: var(--primary-cyan);
+  color: #fff;
+  transition: all 0.2s ease-in-out;
+}
+
+.primary:hover {
+  background-color: #9be3e2;
+}
+
+.secondary {
+  background-color: #fff;
+  transition: all 0.2s ease-in-out;
+}
+
+.secondary:hover {
+  color: var(--very-dark-violet);
+}
+
+.rounded {
+  border-radius: 0.5rem;
+}
