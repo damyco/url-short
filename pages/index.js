@@ -1,11 +1,13 @@
 import Head from "next/head";
 
 import Header from "../components/Header";
+import HeroSection from "../components/Hero";
 
 import styles from "../styles/Home.module.css";
 
 /*
-
+TODO
+This project must:
 - View the optimal layout for the site depending on their device's screen size
 - Shorten any valid URL
 - See a list of their shortened links, even after refreshing the browser
@@ -28,14 +30,7 @@ export default function Home() {
       <Header />
 
       <main className={styles.main}>
-        <section>
-          <h1>More than just shorter links</h1>
-          <p>
-            Build your brand&apos;s recognition and get detailed insights on how
-            your link are performing
-          </p>
-          <button>Get started</button>
-        </section>
+        <HeroSection />
 
         <section>
           <input type="text" placeholder="Shorten your link here..." />

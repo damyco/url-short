@@ -1,11 +1,12 @@
 .btn {
   border: 0;
   padding: 0.6rem 1.5rem;
-  color: var(--grayish-violet);
   border-radius: 10rem;
   font-weight: bold;
   font-size: 1rem;
   cursor: pointer;
+  color: var(--grayish-violet);
+  background-color: #fff;
 }
 
 .primary {

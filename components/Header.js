@@ -3,7 +3,6 @@ import Link from "next/link";
 import Button from "./Button";
 
 import styles from "../styles/Header.module.css";
-import btnStyles from "../styles/Button.module.css";
 
 const links = [
   { id: 1, url: "/", text: "Features" },
@@ -35,8 +34,8 @@ export default function Header() {
           </ul>
         </nav>
         <div>
-          <Button style={btnStyles.secondary}>Login</Button>
-          <Button style={btnStyles.primary}>Sign up</Button>
+          <Button style="secondary">Login</Button>
+          <Button style="primary">Sign up</Button>
         </div>
       </div>
     </header>
