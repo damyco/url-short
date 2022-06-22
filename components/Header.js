@@ -1,3 +1,5 @@
+import { useEffect, useState } from "react";
+
 import Link from "next/link";
 
 import Button from "./Button";
@@ -11,8 +13,16 @@ const links = [
 ];
 
 export default function Header() {
+  const [scroll, setScroll] = useState(false);
+
+  useEffect(() => {
+    window.addEventListener("scroll", () => {
+      setScroll(window.scrollY > 50);
+    });
+  }, []);
+
   return (
-    <header className={styles.header}>
+    <header className={`${styles.header} ${scroll ? styles.scroll : ""}`}>
       <div className={styles.container}>
         <nav className={styles.nav}>
           <Link href="/">

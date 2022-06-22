@@ -1,0 +1,27 @@
+.wrapper {
+  position: relative;
+  max-width: 75%;
+  background: url(/bg-shorten-desktop.svg);
+  border-radius: 6px;
+  background-color: var(--primary-dark-violet);
+  padding: 2rem;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container button {
+  border-radius: 6px;
+  margin-left: 1rem;
+}
+
+.linkInput {
+  border: 0;
+  border-radius: 6px;
+  padding: 0.8rem 1rem;
+  width: 80%;
+  font-size: 1rem;
+}

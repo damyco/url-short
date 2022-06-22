@@ -2,7 +2,7 @@ import Head from "next/head";
 
 import Header from "../components/Header";
 import HeroSection from "../components/Hero";
-
+import ShortenLinkSection from "../components/ShortenLink";
 import styles from "../styles/Home.module.css";
 
 /*
@@ -31,11 +31,7 @@ export default function Home() {
 
       <main className={styles.main}>
         <HeroSection />
-
-        <section>
-          <input type="text" placeholder="Shorten your link here..." />
-          <button>Shorten it!</button>
-        </section>
+        <ShortenLinkSection />
 
         <section>
           <h1>Advanced Statistics</h1>
