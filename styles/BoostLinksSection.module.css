@@ -1,0 +1,15 @@
+.wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background: url(/bg-boost-desktop.svg);
+  background-color: var(--primary-dark-violet);
+  background-size: cover;
+  padding: 3rem;
+}
+
+.heading {
+  color: #fff;
+  margin-bottom: 1.5rem;
+}

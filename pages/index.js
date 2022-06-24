@@ -4,7 +4,7 @@ import Header from "../components/Header";
 import HeroSection from "../components/Hero";
 import ShortenLinkSection from "../components/ShortenLink";
 import StatisticsSection from "../components/StatisticsSection";
-import styles from "../styles/Home.module.css";
+import BoostLinksSection from "../components/BoostLinksSection";
 
 /*
 TODO
@@ -36,10 +36,7 @@ export default function Home() {
       </main>
 
       <StatisticsSection />
-      <section>
-        <h1>Boost your links today</h1>
-        <button>Get started</button>
-      </section>
+      <BoostLinksSection />
 
       <footer>
         <div className="LOGO"></div>
