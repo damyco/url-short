@@ -1,4 +1,27 @@
+import Card from "./Card";
+
 import styles from "../styles/StatisticsSection.module.css";
+
+const cardsContent = [
+  {
+    id: 1,
+    title: "Brand Recognition",
+    text: "Boost your brand recognition with each click. Generic links don't mean a thing. Branded links help instil confidence in your content.",
+    iconUrl: "/icon-brand-recognition.svg",
+  },
+  {
+    id: 2,
+    title: "Detailed Records",
+    text: "Gain insights into who is clicking your links. Knowing when and were people engage with your content helps inform better decisions.",
+    iconUrl: "/icon-detailed-records.svg",
+  },
+  {
+    id: 3,
+    title: "Fully Customizable",
+    text: "Improve brand awareness and content discoverability through customizable links, supercharging audience engagement.",
+    iconUrl: "/icon-fully-customizable.svg",
+  },
+];
 
 export default function StatisticsSection() {
   return (
@@ -10,40 +33,16 @@ export default function StatisticsSection() {
           statistics dashboard.
         </p>
         <div className={styles.cards}>
-          <div className={styles.card}>
-            <div className={styles.icon}>
-              <img src="/icon-brand-recognition.svg" alt="" />
-            </div>
-            <h6>Brand Recognition</h6>
-            <p>
-              Boost your brand recognition with each click. Generic links
-              don&apos;t mean a thing. Branded links help instil confidence in
-              your content.
-            </p>
-          </div>
-          <div className={styles.card}>
-            <img src="" alt="" />{" "}
-            <div className={styles.icon}>
-              <img src="/icon-brand-recognition.svg" alt="" />
-            </div>{" "}
-            <h6>Detailed Records</h6>
-            <p>
-              Boost your brand recognition with each click. Generic links
-              don&apos;t mean a thing. Branded links help instil confidence in
-              your content.
-            </p>
-          </div>
-          <div className={styles.card}>
-            <div className={styles.icon}>
-              <img src="/icon-brand-recognition.svg" alt="" />
-            </div>
-            <h6>Fully Customizable</h6>
-            <p>
-              Boost your brand recognition with each click. Generic links
-              don&apos;t mean a thing. Branded links help instil confidence in
-              your content.
-            </p>
-          </div>
+          {cardsContent.map((card) => {
+            return (
+              <Card
+                key={card.id}
+                title={card.title}
+                text={card.text}
+                iconUrl={card.iconUrl}
+              />
+            );
+          })}
         </div>
       </div>
     </section>
