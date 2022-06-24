@@ -5,6 +5,7 @@ import HeroSection from "../components/Hero";
 import ShortenLinkSection from "../components/ShortenLink";
 import StatisticsSection from "../components/StatisticsSection";
 import BoostLinksSection from "../components/BoostLinksSection";
+import Footer from "../components/Footer";
 
 /*
 TODO
@@ -38,13 +39,7 @@ export default function Home() {
       <StatisticsSection />
       <BoostLinksSection />
 
-      <footer>
-        <div className="LOGO"></div>
-
-        <nav></nav>
-
-        <div className="social"></div>
-      </footer>
+      <Footer />
     </>
   );
 }

@@ -27,7 +27,7 @@ export default function StatisticsSection() {
   return (
     <section className={styles.wrapper}>
       <div className={styles.container}>
-        <h2>Advanced Statistics</h2>
+        <h3>Advanced Statistics</h3>
         <p>
           Track how your links are performing across the web with our advanced
           statistics dashboard.
