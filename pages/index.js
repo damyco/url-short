@@ -3,6 +3,7 @@ import Head from "next/head";
 import Header from "../components/Header";
 import HeroSection from "../components/Hero";
 import ShortenLinkSection from "../components/ShortenLink";
+import StatisticsSection from "../components/StatisticsSection";
 import styles from "../styles/Home.module.css";
 
 /*
@@ -29,42 +30,16 @@ export default function Home() {
 
       <Header />
 
-      <main className={styles.main}>
+      <main>
         <HeroSection />
         <ShortenLinkSection />
-
-        <section>
-          <h1>Advanced Statistics</h1>
-          <p>
-            Track how your links are performing across the web with our advanced
-            statistics dashboard.
-          </p>
-        </section>
-
-        <section>
-          <div>
-            <div>
-              <div className="CIRCLE"></div>
-              <h2>Brand recognition</h2>
-              <p>Text</p>
-            </div>
-            <div>
-              <div className="CIRCLE"></div>
-              <h2>Brand recognition</h2>
-              <p>Text</p>
-            </div>
-            <div>
-              <div className="CIRCLE"></div>
-              <h2>Brand recognition</h2>
-              <p>Text</p>
-            </div>
-          </div>
-        </section>
-        <section>
-          <h1>Boost your links today</h1>
-          <button>Get started</button>
-        </section>
       </main>
+
+      <StatisticsSection />
+      <section>
+        <h1>Boost your links today</h1>
+        <button>Get started</button>
+      </section>
 
       <footer>
         <div className="LOGO"></div>
