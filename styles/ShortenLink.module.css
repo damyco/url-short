@@ -1,11 +1,10 @@
 .wrapper {
-  position: relative;
-  top: 63px;
   max-width: 75%;
   background: url(/bg-shorten-desktop.svg);
   border-radius: 6px;
   background-color: var(--primary-dark-violet);
   padding: 2rem;
+  margin-top: -8.5rem;
 }
 
 .container {

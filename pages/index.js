@@ -2,7 +2,6 @@ import Head from "next/head";
 
 import Header from "../components/Header";
 import HeroSection from "../components/Hero";
-import ShortenLinkSection from "../components/ShortenLink";
 import StatisticsSection from "../components/StatisticsSection";
 import BoostLinksSection from "../components/BoostLinksSection";
 import Footer from "../components/Footer";
@@ -21,6 +20,8 @@ This project must:
 */
 
 export default function Home() {
+  // const shortenedUrl = useQuery("url", )
+
   return (
     <>
       <Head>
@@ -33,7 +34,6 @@ export default function Home() {
 
       <main>
         <HeroSection />
-        <ShortenLinkSection />
       </main>
 
       <StatisticsSection />

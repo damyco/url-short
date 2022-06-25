@@ -1,0 +1,31 @@
+.container {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  background-color: #fff;
+  border-radius: 6px;
+  padding: 1rem 1.2rem;
+  width: 75%;
+  margin-top: 1rem;
+}
+
+.container p {
+  margin: 0;
+  flex: auto;
+  color: var(--grayish-dark-violet);
+}
+
+.container a {
+  margin-right: 1rem;
+  color: var(--primary-cyan);
+}
+
+.container button {
+  font-size: 0.7rem;
+  border-radius: 6px;
+  padding: 0.5rem 1.5rem;
+}
+
+.btnCopied {
+  background-color: var(--grayish-dark-violet);
+}

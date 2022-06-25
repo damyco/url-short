@@ -1,5 +1,5 @@
 import Card from "./Card";
-
+import ShortenLink from "./ShortenLink";
 import styles from "../styles/StatisticsSection.module.css";
 
 const cardsContent = [
@@ -27,7 +27,8 @@ export default function StatisticsSection() {
   return (
     <section className={styles.wrapper}>
       <div className={styles.container}>
-        <h3>Advanced Statistics</h3>
+        <ShortenLink />
+        <h3 className={styles.heading}>Advanced Statistics</h3>
         <p>
           Track how your links are performing across the web with our advanced
           statistics dashboard.
