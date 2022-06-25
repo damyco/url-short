@@ -1,5 +1,6 @@
 import axios from "axios";
 import { useQuery } from "react-query";
+import { useState } from "react";
 
 import Button from "./Button";
 import ShortLink from "./ShortLink";
@@ -14,16 +15,29 @@ import styles from "../styles/ShortenLink.module.css";
 // - render the added elements from the state
 
 export default function ShortenLink() {
-  const { isLoading, data, error, refetch } = useQuery("url", async () => {
-    const { data } = await axios(
-      "https://api.shrtco.de/v2/shorten?url=example.org/very/long/link.html"
-    );
+  const [urlToShort, setUrlToShort] = useState("");
+  const [allUrls, setAllUrls] = useState([]);
+
+  const fetchData = async ({ queryKey }) => {
+    const [_, url] = queryKey;
+    const { data } = await axios(`https://api.shrtco.de/v2/shorten?url=${url}`);
     console.log(data);
+    setAllUrls([...allUrls, data]);
     return data;
-  });
+  };
+
+  const { isLoading, isRefetching, data, error, refetch } = useQuery(
+    ["url", urlToShort],
+    fetchData,
+    {
+      refetchOnWindowFocus: false,
+      enabled: false, // handle refetch manually
+    }
+  );
 
   const handleClick = (e) => {
     e.preventDefault();
+    setUrlToShort("");
     refetch();
   };
 
@@ -34,6 +48,8 @@ export default function ShortenLink() {
           <input
             className={styles.linkInput}
             type="url"
+            value={urlToShort}
+            onChange={(e) => setUrlToShort(e.target.value)}
             placeholder="Shorten a link here..."
           />
           <Button style="primary" handler={handleClick}>
@@ -41,9 +57,15 @@ export default function ShortenLink() {
           </Button>
         </form>
       </section>
-      <ShortLink />
-      <ShortLink />
-      <ShortLink />
+      {allUrls.map((item) => {
+        return (
+          <ShortLink
+            key={item.result.code}
+            originalLink={item.result.original_link}
+            shortLink={item.result.full_short_link2}
+          />
+        );
+      })}
     </>
   );
 }
