@@ -17,12 +17,20 @@ import styles from "../styles/ShortenLink.module.css";
 export default function ShortenLink() {
   const [urlToShort, setUrlToShort] = useState("");
   const [allUrls, setAllUrls] = useState([]);
+  const [errorMessage, setErrorMessage] = useState(null);
 
   const fetchData = async ({ queryKey }) => {
     const [_, url] = queryKey;
+
     const { data } = await axios(`https://api.shrtco.de/v2/shorten?url=${url}`);
-    console.log(data);
+
+    if (allUrls.some((item) => item.result.code === data.result.code)) {
+      setErrorMessage("This link is already shortened! Try a different one.");
+      resetErrorMessage();
+      return;
+    }
     setAllUrls([...allUrls, data]);
+
     return data;
   };
 
@@ -37,8 +45,21 @@ export default function ShortenLink() {
 
   const handleClick = (e) => {
     e.preventDefault();
+    if (urlToShort.length <= 0) {
+      setErrorMessage("Please add a link.");
+      resetErrorMessage();
+      return;
+    }
+
     setUrlToShort("");
+
     refetch();
+  };
+
+  const resetErrorMessage = () => {
+    setTimeout(() => {
+      setErrorMessage(null);
+    }, 2000);
   };
 
   return (
@@ -52,10 +73,19 @@ export default function ShortenLink() {
             onChange={(e) => setUrlToShort(e.target.value)}
             placeholder="Shorten a link here..."
           />
-          <Button style="primary" handler={handleClick}>
-            Shorten it!
-          </Button>
+          {isLoading || isRefetching ? (
+            <Button>Shortening...</Button>
+          ) : (
+            <Button style="primary" handler={handleClick}>
+              Shorten it!
+            </Button>
+          )}
         </form>
+        {errorMessage ? (
+          <span className={styles.errorMessage}>{errorMessage}</span>
+        ) : (
+          ""
+        )}
       </section>
       {allUrls.map((item) => {
         return (
